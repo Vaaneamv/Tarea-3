@@ -22,7 +22,7 @@ El balanceo de carga depende de la partición que se escoga, ya que si se escoge
 estos? ¿Cuál es la ventaja de uno sobre otro? ¿Cuál utilizaría usted para en el caso actual y por qué? Justifique
 apropiadamente su respuesta.
 
-
+Esta la Estrategia Simple y Estrategia de topología de red, la ventaja es que la estrategia simple  
 
 3. Teniendo en cuenta el contexto del problema ¿Usted cree que la solución propuesta es la correcta? ¿Qué ocurre
 cuando se quiere escalar en la solución? ¿Qué mejoras implementaría? Oriente su respuesta hacia el Sharding (la
