@@ -2,7 +2,7 @@ import email
 from unicodedata import doctor
 from urllib.parse import DefragResult
 from xml.etree.ElementTree import Comment
-from app.db import db, BaseModelMixin
+from db import db , BaseModelMixin
 class Patient(db.Model, BaseModelMixin):
     id = db.Column(db.Integer, primary_key=True)
     doctor = db.Column(db.String)
@@ -23,8 +23,8 @@ class Patient(db.Model, BaseModelMixin):
 class Prescription(db.Model, BaseModelMixin):
     id = db.Column(db.Integer, primary_key=True)
     id_patient= db.Column(db.Integer, primary_key=True)
-    comentario= db.Column(db.String)
-    drug= db.Column(db.String)
+    comentario = db.Column(db.String)
+    drug = db.Column(db.String)
     doctor = db.Column(db.String)
     Patient_id = db.Column(db.Integer, db.ForeignKey('Patient.id'), nullable=False)
     def __init__(self, doctor):
