@@ -1,30 +1,37 @@
 import email
-from unicodedata import name
+from unicodedata import doctor
+from urllib.parse import DefragResult
+from xml.etree.ElementTree import Comment
 from app.db import db, BaseModelMixin
-class Film(db.Model, BaseModelMixin):
+class Patient(db.Model, BaseModelMixin):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
+    doctor = db.Column(db.String)
     lastname = db.Column(db.Integer)
     rut = db.Column(db.Integer)
     email = db.Column(db.String)
     birthday = db.Column(db.Integer)
-    def __init__(self, name, lastname, rut, email, birthday=[]):
-        self.name = name
+    def __init__(self, doctor, lastname, rut, email, birthday=[]):
+        self.doctor = doctor
         self.lastname = lastname
         self.rut = rut
         self.email = email
         self.birthday = birthday
     def __repr__(self):
-        return f'Film({self.name})'
+        return f'Patient({self.doctor})'
     def __str__(self):
-        return f'{self.name}'
-class Actor(db.Model, BaseModelMixin):
+        return f'{self.doctor}'
+class Prescription(db.Model, BaseModelMixin):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    film_id = db.Column(db.Integer, db.ForeignKey('film.id'), nullable=False)
-    def __init__(self, name):
-        self.name = name
+    id_patient= db.Column(db.Integer, primary_key=True)
+    comentario= db.Column(db.String)
+    drug= db.Column(db.String)
+    doctor = db.Column(db.String)
+    Patient_id = db.Column(db.Integer, db.ForeignKey('Patient.id'), nullable=False)
+    def __init__(self, doctor):
+        self.doctor = doctor
+        self.comentario= comentario
+        self.drug= drug 
     def __repr__(self):
-        return f'Actor({self.name})'
+        return f'Prescription({self.doctor})'
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.doctor}'
