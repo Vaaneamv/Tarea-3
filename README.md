@@ -22,8 +22,9 @@ El balanceo de carga depende de la partición que se escoga, ya que si se escoge
 estos? ¿Cuál es la ventaja de uno sobre otro? ¿Cuál utilizaría usted para en el caso actual y por qué? Justifique
 apropiadamente su respuesta.
 
-Esta la Estrategia Simple y Estrategia de topología de red, la ventaja es que la estrategia simple  
+Esta la Estrategia Simple y Estrategia de topología de red, la ventaja es que la estrategia simple al tener un nodo se determinan sus nodos en el sentido de agujas del reloj y en esas se realizará la copia, en cambio la topología de red debe saber primero como se agruparan los datos y después se determinará la estrategia de colocación de copias. Para el caso de la tarea escogería la estrategia simple , ya que se eligirá un nodo y se enviarán las copias correspondientes independiente de la agrupación de datos, debido a que si se modifica la cantidad de pacientes y recetas, no afectará en el calculo de las replicas de información y la elección de los nodos para esto.
 
 3. Teniendo en cuenta el contexto del problema ¿Usted cree que la solución propuesta es la correcta? ¿Qué ocurre
 cuando se quiere escalar en la solución? ¿Qué mejoras implementaría? Oriente su respuesta hacia el Sharding (la
 replicación/distribución de los datos) y comente una estrategia que podría seguir para ordenar los datos.
+Sí, la solución es una propuesta correcta, cuando se quiere escalar la solución primero se implementa cassandra con los datos que se nos dan que son paciente y receta. Para mejorar esto, implementaría la estrategia simple con el fin de que se puedan distribuir los datos y las replicas, para que a la hora de agregar más pacientes y recetas no afecte la distribución de los datos y poder tener un buen balanceo de carga al implementar la solución.
