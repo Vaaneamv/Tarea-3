@@ -6,11 +6,11 @@ from app.db import db, BaseModelMixin
 class Patient(db.Model, BaseModelMixin):
     id = db.Column(db.Integer, primary_key=True)
     doctor = db.Column(db.String)
-    lastname = db.Column(db.Integer)
+    lastname = db.Column(db.String)
     rut = db.Column(db.Integer)
     email = db.Column(db.String)
     birthday = db.Column(db.Integer)
-    def __init__(self, doctor, lastname, rut, email, birthday=[]):
+    def __init__(self, doctor, lastname, rut, email, birthday):
         self.doctor = doctor
         self.lastname = lastname
         self.rut = rut

@@ -1,12 +1,16 @@
+from ast import dump
 from marshmallow import fields
 from app.ext import ma
-class FilmSchema(ma.Schema):
+class PatientOn(ma.Schema):
     id = fields.Integer(dump_only=True)
-    title = fields.String()
-    length = fields.Integer()
-    year = fields.Integer()
-    director = fields.String()
-    actors = fields.Nested('ActorSchema', many=True)
-class ActorSchema(ma.Schema):
+    doctor = fields.String()
+    lastname = fields.String()
+    rut = fields.Integer()
+    email = fields.String()
+    birthday = fields.String
+class PrescriptionOn(ma.Schema):
     id = fields.Integer(dump_only=True)
-    name = fields.String()
+    id_patient= fields.Integer(dump_only=True)
+    comentario= fields.String()
+    drug = fields.String()
+    doctor= fields.String()
